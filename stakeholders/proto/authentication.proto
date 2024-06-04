@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package = "proto/authentication";
+option go_package = "proto/auth";
 
 package Authorize;
 
@@ -16,7 +16,7 @@ message Credentials {
 }
 
 message AuthenticationTokens {
-  int32 id = 1;
+  int64 id = 1;
   string access_token = 2;
 }
 
@@ -25,7 +25,7 @@ message AccountRegistrationRequest {
   string password = 2;
   string email = 3;
   string name = 4;
-  string role = 5;
+  int32 role = 5;
   string profilePictureUrl = 6;
   string biography = 7;
   string motto = 8;
@@ -34,5 +34,5 @@ message AccountRegistrationRequest {
 
 message AccountRegistrationResponse {
   bool success = 1;
-  int32 id = 2;
+  int64 id = 2;
 }

@@ -7,7 +7,7 @@ import (
 	"gorm.io/gorm"
 )
 
-type UserRole int
+type UserRole int32
 
 const (
 	Administrator UserRole = iota
@@ -16,7 +16,7 @@ const (
 )
 
 type User struct {
-	Id       int64    `gorm:"primaryKey"`
+	Id       int64    `gorm:"primaryKey" json:"id"`
 	Username string   `json:"username"`
 	Password string   `json:"password"`
 	Role     UserRole `json:"role"`
