@@ -13,7 +13,6 @@ import (
 type AuthService struct {
 	UserRepo *repo.UserRepository
 	Key      string
-	// TODO add key harcoded
 }
 
 func (s *AuthService) Login(credentials *auth.Credentials) (*auth.AuthenticationTokens, error) {
